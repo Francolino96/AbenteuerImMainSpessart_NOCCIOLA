@@ -12,7 +12,7 @@ class PreloaderScene extends Phaser.Scene {
         this.cameras.main.fadeIn(800, 0, 0, 0);
         this.personalScale = (this.scale.height + this.scale.width) / 2200;
 
-        this.background = this.add.sprite(0, 0, 'forest_background').setOrigin(0.5, 1);
+        this.background = this.add.sprite(0, 0, 'water_background').setOrigin(0.5, 1);
         const aspectRatio = this.background.width / this.background.height;
         let newW, newH;
         if (this.scale.width / this.scale.height > aspectRatio) {
@@ -103,20 +103,29 @@ class PreloaderScene extends Phaser.Scene {
         else console.log("Errore nel caricamento del chosenCharacter");
         this.load.image('ground_background', 'assets/underground_background.jpg');
 
-        this.load.spritesheet('truck', 'assets/Sprites_truck.png', {
-            frameWidth: 2795/6,
-            frameHeight: 240,
-            margin: 0,
-            spacing: 6.71,
-        });
-
         this.load.image('ground', 'assets/Sprites_ground.png');
         this.load.image('flower', 'assets/Sprites_flowers.png');
         this.load.image('grass', 'assets/Sprites_grass.png');
-        this.load.image('tree_1', 'assets/Sprites_tree_1.png');
-        this.load.image('tree_2', 'assets/Sprites_tree_2.png');
-        this.load.image('tree_3', 'assets/Sprites_tree_3.png');
-        this.load.image('tree_4', 'assets/Sprites_tree_4.png');
+        this.load.image('water', 'assets/Sprites_water.png');
+        this.load.spritesheet('fish', 'assets/Sprites_fish.png', {
+            frameWidth: 200,
+            frameHeight: 74
+        });
+        this.load.spritesheet('snake', 'assets/Sprites_snake.png', {
+            frameWidth: 1200/3,
+            frameHeight: 60,
+            margin: 0,
+            spacing: 6.71
+        });
+        this.load.image('bomb', 'assets/Sprites_bomb.png');
+        this.load.image('bomb_2', 'assets/Sprites_bomb_2.png');
+        this.load.spritesheet('fly', 'assets/Sprites_fly.png', {
+            frameWidth: 147/2,
+            frameHeight: 75
+        });
+        this.load.image('fence', 'assets/Sprites_fence.png');
+        this.load.image('raft', 'assets/Sprites_raft.png');
+        this.load.image('stiancia', 'assets/Sprites_stiancia.png');
         this.load.image('deepGround', 'assets/Sprites_deep-ground.png');
         this.load.image('box', 'assets/Sprites_box.png');
         this.load.image('skull_1', 'assets/Sprites_skeleton_1.png');
@@ -124,25 +133,16 @@ class PreloaderScene extends Phaser.Scene {
         this.load.image('skull_3', 'assets/Sprites_skeleton_3.png');
         this.load.image('direction_board', 'assets/Sprites_direction_board.png');
         this.load.image('end_board', 'assets/Sprites_end_board.png');
-        this.load.spritesheet('boar', 'assets/Sprites_boar.png', {
-            frameWidth: 133,
-            frameHeight: 101
-        });
-        this.load.image('mushroom', 'assets/Sprites_mushroom.png');
-        this.load.image('mushroom_smashed', 'assets/Sprites_mushroom_2.png');
-        this.load.image('blueberry_icon', 'assets/Sprites_blueberry_icon.png');
-        this.load.image('sugar_icon', 'assets/Sprites_sugar_cube_icon.png');
-        this.load.spritesheet('sugar', 'assets/Sprites_sugar_cube.png', {
+        this.load.image('hazelnut_icon', 'assets/Sprites_hazelnut_icon.png');
+        this.load.image('milk_icon', 'assets/Sprites_milk_icon.png');
+        this.load.spritesheet('milk', 'assets/Sprites_milk.png', {
             frameWidth: 91,
             frameHeight: 91
         });
-        this.load.spritesheet('blueberry', 'assets/Sprites_blueberry.png', {
+        this.load.spritesheet('hazelnut', 'assets/Sprites_hazelnut.png', {
             frameWidth: 91,
             frameHeight: 91
         });
-        this.load.image('acorn', 'assets/Sprites_acorn.png');
-        this.load.image('acorn_expl_1', 'assets/Sprites_acorn_explosion_1.png');
-        this.load.image('acorn_expl_2', 'assets/Sprites_acorn_explosion_2.png');
 
         // bottoni movimento
         this.load.image('buttonRight', 'assets/Sprites_right-arrow-button.png');
@@ -153,7 +153,8 @@ class PreloaderScene extends Phaser.Scene {
         this.load.audio('soundtrack', 'sounds/soundtrack.mp3');
         this.load.audio('jump', 'sounds/jump.mp3');
         this.load.audio('collect', 'sounds/coin.mp3');
-        this.load.audio('boar', 'sounds/boar.mp3');
+        this.load.audio('fly', 'sounds/fly.mp3');
+        this.load.audio('snake', 'sounds/snake.mp3');
         this.load.audio('pop', 'sounds/pop.mp3');
         this.load.audio('jumpOver', 'sounds/jumpOver.mp3');
         this.load.audio('gameOver', 'sounds/gameOver.mp3');

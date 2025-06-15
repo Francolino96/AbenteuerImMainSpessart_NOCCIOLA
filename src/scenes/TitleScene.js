@@ -5,9 +5,9 @@ class TitleScene extends Phaser.Scene {
 
     preload () {
         this.load.image('forest_background', 'assets/forest_background.png');
-        this.load.image('water_background', 'assets/water_background.png');
-        this.load.image('orchard_background', 'assets/orchard_background.png');
-        this.load.image('fields_background', 'assets/fields_background.png');
+        this.load.image('water_background', 'assets/water_background.PNG');
+        this.load.image('orchard_background', 'assets/orchard_background.PNG');
+        this.load.image('fields_background', 'assets/fields_background.PNG');
 
         let newFont = new FontFace('PressStart2P', 'url(PressStart2P-Regular.ttf)');
         newFont.load().then(function(loadedFont) {
@@ -19,7 +19,7 @@ class TitleScene extends Phaser.Scene {
         this.scale.refresh();
         this.personalScale = (this.scale.height + this.scale.width)/2200;
 
-        this.background = this.add.sprite(0, 0, 'forest_background').setOrigin(0.5, 1);
+        this.background = this.add.sprite(0, 0, 'water_background').setOrigin(0.5, 1);
         const aspectRatio = this.background.width / this.background.height;
         let newW, newH;
         if (this.scale.width / this.scale.height > aspectRatio) {
@@ -60,8 +60,8 @@ class TitleScene extends Phaser.Scene {
 
         // Scegli la posizione Y in base al sistema
         const posY = isIOS 
-            ? this.scale.height - 170 * this.personalScale   // se è iOS
-            : this.scale.height - 20 * this.personalScale;   // se è Android (o altro)
+            ? this.scale.height - 180 * this.personalScale   // se è iOS
+            : this.scale.height - 30 * this.personalScale;   // se è Android (o altro)
 
         this.add.text(
             this.scale.width/2, 
