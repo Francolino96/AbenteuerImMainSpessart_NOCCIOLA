@@ -694,7 +694,7 @@ export function createBomb(scene, xPosition, yPosition) {
     if (scene.sceneName == 'OrchardScene'){
         spriteName = 'pumpkin'
     }
-    else if (scene.sceneName == 'WaterScene'){
+    else if (scene.sceneName == 'WaterScene' || scene.sceneName == 'FirstScene'){
         spriteName = 'bomb'
     }
     scene.bomb = scene.physics.add.sprite(xPosition * scene.personalScale, yPosition, spriteName).setOrigin(0.5, 1);
